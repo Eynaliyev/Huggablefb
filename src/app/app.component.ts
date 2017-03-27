@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -6,6 +6,19 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { TabsPage } from '../pages/tabs/tabs';
 import firebase from 'firebase';
 
+import {AuthProvider} from './providers/auth-provider'; 
+import {ChatsProvider} from './providers/chats-provider'; 
+import {UserProvider} from './providers/user-provider'; 
+import {UtilProvider} from './providers/util-provider'; 
+import { 
+    FIREBASE_PROVIDERS,  
+    defaultFirebase,  
+    firebaseAuthConfig,  
+    FirebaseRef, 
+    AngularFire, 
+    AuthProviders,  
+    AuthMethods 
+} from 'angularfire2'; 
 
 @Component({
   templateUrl: 'app.html'
